@@ -104,25 +104,64 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="285" key="GridCell.Tab.0.bottom" timestamp="1606327238348">
+    <state x="270" y="278" key="#xdebugger.XInspectDialog" timestamp="1606371881622">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606327238348" />
-    <state width="1899" height="285" key="GridCell.Tab.0.center" timestamp="1606327238347">
+    <state x="270" y="278" key="#xdebugger.XInspectDialog/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606371881622" />
+    <state width="1899" height="254" key="GridCell.Tab.0.bottom" timestamp="1606411251155">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606327238347" />
-    <state width="1899" height="285" key="GridCell.Tab.0.left" timestamp="1606327238347">
+    <state width="1899" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606411251155" />
+    <state width="1899" height="254" key="GridCell.Tab.0.center" timestamp="1606411251155">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606327238347" />
-    <state width="1899" height="285" key="GridCell.Tab.0.right" timestamp="1606327238347">
+    <state width="1899" height="254" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606411251155" />
+    <state width="1899" height="254" key="GridCell.Tab.0.left" timestamp="1606411251155">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606327238347" />
+    <state width="1899" height="254" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606411251155" />
+    <state width="1899" height="254" key="GridCell.Tab.0.right" timestamp="1606411251155">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="254" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606411251155" />
+    <state width="1899" height="254" key="GridCell.Tab.1.bottom" timestamp="1606411276601">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="254" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606411276601" />
+    <state width="1899" height="254" key="GridCell.Tab.1.center" timestamp="1606411276601">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="254" key="GridCell.Tab.1.center/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606411276601" />
+    <state width="1899" height="254" key="GridCell.Tab.1.left" timestamp="1606411276601">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="254" key="GridCell.Tab.1.left/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606411276601" />
+    <state width="1899" height="254" key="GridCell.Tab.1.right" timestamp="1606411276601">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="254" key="GridCell.Tab.1.right/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606411276601" />
     <state x="461" y="170" key="SettingsEditor" timestamp="1606179501381">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="170" key="SettingsEditor/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606179501381" />
+    <state width="968" height="533" key="XDebugger.FullValuePopup" timestamp="1606371881511">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="968" height="533" key="XDebugger.FullValuePopup/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606371881511" />
+    <state x="803" y="310" key="refactoring.ChangeSignatureDialog" timestamp="1606365470792">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="803" y="310" key="refactoring.ChangeSignatureDialog/0.0.1920.1050/-1920.0.1536.834/1920.0.1920.1050@0.0.1920.1050" timestamp="1606365470792" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
