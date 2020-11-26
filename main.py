@@ -12,9 +12,10 @@ def build_oracle_dict(dataset):
     for entry in dataset:
         oracle_id = entry["oracle_id"]
         if oracle_id in oracle_dict:
-            oracle_dict[oracle_id] = [oracle_dict[oracle_id].copy(), entry.copy()]
+            #oracle_dict[oracle_id] = [oracle_dict[oracle_id].copy(), entry.copy()]
+            oracle_dict[oracle_id].append(entry)
         else:
-            oracle_dict[oracle_id] = entry.copy()
+            oracle_dict[oracle_id] = entry#.copy()
     return oracle_dict
 
 
@@ -22,11 +23,13 @@ def count_sets(oracle_dict):
     card_sets = dict()
     for card in oracle_dict:
         for printing in oracle_dict[card]: #do i need to go one level deeper...?
-            card_set = printing["set_name"]
-            if card_set in card_sets:
-                card_sets[card_set] += 1
-            else:
-                card_sets[card_set] = 1
+            for print in printing:
+                #card_set = printing["set_name"]
+                card_set = print["set_name"]
+                if card_set in card_sets:
+                    card_sets[card_set] += 1
+                else:
+                    card_sets[card_set] = 1
 
     card_count = 0
     for card in card_sets.values():
