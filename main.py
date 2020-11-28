@@ -1,73 +1,38 @@
 import json
-from collections import Counter
 
-f = open('all-cards.json', encoding='utf8')
-
-data = json.load(f)
-
-keyCount = 0
-cardCount = 0
-stop = 0
-entryCount = 0
-setsRaw = list()
-
-cardIDs = list()
-oracleIDs = set()
-
-cardInfo = {}
-
-# def relevantValue(i):
-#     switcher = {
-#         "set":"sets",
-#         "reprint":"reprints",
-#
-#     }
-#
-# def count_cards(cards, info):
-#     for card in cards:
-#         for(k, v) in card.items():
-
-#"data" is a list
-#entry is a dict
-#each "entry" is a single card.
-#each "item" in entry.items() is each (k, v) pair in the card
-for entry in data:
-    entryCount += 1
-    for(k, v) in entry.items():
-        keyCount += 1
-        if k == "id":
-            cardIDs.append(v)
-        if k == "oracle_id":
-            oracleIDs.add(v)
-        if k == "set":
-            setsRaw.append(v)
-
-sets = dict(Counter(setsRaw))
-
-for k,v in sets.items():
-    print(F"{k} : {v}")
-
-print(F"# of sets: {len(sets.keys())}")
-
-print(F"cardIDs before duplicate removal: {len(cardIDs)}")
-
-uIDs = set(cardIDs)
-
-print(F"cardIDs after duplicate removal: {len(uIDs)}")
-
-print(F"oracleIDs: {len(oracleIDs)}")
-
-
+"""
+builds a dict of lists of dicts
+key == oracle_id
+each oracle_dict[oracle_id] has a list of dicts, one for each printing
+"""
 def build_oracle_dict(dataset):
     oracle_dict = dict()
-    for entry in dataset:
-        for k, v in entry.items():#wait sec... i can just access the "oracle_id" key directly inside "entry" /facepalm
-            if k == "oracle_id":
-                if v in oracle_dict:
-                    oracle_dict[v] = [oracle_dict[v], entry]
-                else:
-                    oracle_dict[v] = entry
+    for entry in dataset:  # entry --> single card object
+        oracle_id = entry["oracle_id"]  # each oracle_id is unique to each logical card object
+        if oracle_id in oracle_dict:
+            oracle_dict[oracle_id].append(entry)
+        else:  # make it into a list of card dicts
+            oracle_dict[oracle_id] = [entry]
     return oracle_dict
+
+
+def count_sets(oracle_dict):
+    card_sets = dict()
+    for card in oracle_dict:
+        for printing in oracle_dict[card]:
+            card_set = printing["set_name"]
+
+            if card_set in card_sets:
+                card_sets[card_set] += 1
+            else:
+                card_sets[card_set] = 1
+
+    card_count = 0
+    for card in card_sets.values():
+        card_count += card
+    print(F"There are {len(card_sets.keys())} sets of cards.\nTotaling {card_count} cards.")
+    return card_sets
+
 
 def extract_oracle_ids(dataset):
     for entry in dataset:
@@ -78,20 +43,17 @@ def extract_oracle_ids(dataset):
 
 
 def main():
-    global data
-    global f
-    oracle_dict = build_oracle_dict(data)
+    card_file = open('all-cards.json', encoding='utf8')
+    card_data = json.load(card_file)
+
+    oracle_dict = build_oracle_dict(card_data)
+
     print(F"build_oracle_dict() found # oracle_id values: {len(oracle_dict.keys())}")
-    f.close()
+
+    count_sets(oracle_dict)
+
+    card_file.close()
     return 0
 
 
 main()
-
-        # if stop < 10:
-        #     print(k, "\n", v, "\n")
-        #     stop += 1
-
-# print(F"keyCount: {keyCount:,}")
-# print(F"cardCount: {cardCount:,}")
-# print(F"entryCount: {entryCount:,}")
