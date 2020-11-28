@@ -1,19 +1,15 @@
 import json
-from operator import itemgetter
 
-#"data" is a list
-#entry is a dict
-#each "entry" is a single card.
-#each "item" in entry.items() is each (k, v) pair in the card
-
-
+"""
+builds a dict of lists of dicts
+key == oracle_id
+each oracle_dict[oracle_id] has a list of dicts, one for each printing
+"""
 def build_oracle_dict(dataset):
     oracle_dict = dict()
-    for entry in dataset:
-        oracle_id = entry["oracle_id"]
-        if oracle_id in oracle_dict: #need to write in dict { : } syntax...
-            #oracle_dict[oracle_id]
-            #oracle_dict[oracle_id] = {oracle_dict[oracle_id].copy(), entry.copy()}#[oracle_dict[oracle_id].copy(), entry.copy()]
+    for entry in dataset:  # entry --> single card object
+        oracle_id = entry["oracle_id"]  # each oracle_id is unique to each logical card object
+        if oracle_id in oracle_dict:
             oracle_dict[oracle_id].append(entry)
         else:  # make it into a list of card dicts
             oracle_dict[oracle_id] = [entry]
@@ -23,21 +19,13 @@ def build_oracle_dict(dataset):
 def count_sets(oracle_dict):
     card_sets = dict()
     for card in oracle_dict:
-        for printing in oracle_dict[card]:  # for printing in oracle_dict[card]: #do i need to go one level deeper...?
+        for printing in oracle_dict[card]:
             card_set = printing["set_name"]
 
             if card_set in card_sets:
                 card_sets[card_set] += 1
             else:
                 card_sets[card_set] = 1
-
-            # for print in printing:
-            #     #card_set = printing["set_name"]
-            #     card_set = print["set_name"]
-            #     if card_set in card_sets:
-            #         card_sets[card_set] += 1
-            #     else:
-            #         card_sets[card_set] = 1
 
     card_count = 0
     for card in card_sets.values():
